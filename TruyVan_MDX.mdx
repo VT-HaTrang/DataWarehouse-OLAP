@@ -1,0 +1,109 @@
+﻿-- Câu 1: Thống kê số lượng vụ án theo từng tháng từng năm.
+Select	{[Measures].[Fact Count]} on Columns,
+		{	
+			DrillDownLevel(
+				DrillDownLevel(
+					[Dim Time].[PhanCapTime]
+				)
+			)
+		} on Rows
+From [Homicide Reports DW];
+
+-- Cau 2: Cho biết tổng số vụ án xảy ra ở bang New York theo từng năm
+SELECT [Measures].[Fact Count] ON COLUMNS, 
+NON EMPTY {[Dim Time].[Year].Members} ON ROWS 
+FROM [Homicide Reports DW]
+WHERE [Dim Location].[State].&[New York]
+
+-- Câu 3: Cho biết thông tin cơ quan điều tra nhiều vụ án nhất trong tháng 5 năm 2016. 
+Select {[Measures].[Fact Count]} on Columns ,
+{TopCount({[Dim Agency].[Agency ID].CHILDREN *[Dim Agency].[Agency].CHILDREN * 
+[Dim Agency].[Agentype].Children},1,[Measures].[Fact Count])} on Rows
+From [Homicide Reports DW]
+Where [Dim Time].[PhanCapTime].[Month].&[May]&[2016]
+
+-- Câu 4: Cho biết tên mối quan hệ có tổng số lượng vụ án liên quan trên 
+--100 tại bang Ohio
+Select	{[Measures].[Fact Count]} on Columns , 
+		{Filter
+			( {[Dim Relationship].[Relationship].Children*[Dim Relationship].
+			[Relationship ID].CHILDREN}
+			, [Measures].[Fact Count] > 100
+			)
+		} on Rows
+From [Homicide Reports DW]
+Where [Dim Location].[State].&[Ohio];
+
+-- Câu 5: Thống kê số vụ án, số nạn nhân và phần trăm nạn nhân trên vụ án của từng năm.
+With Member [Measures].[Ty le nan nhan va vu an (%)]
+	 As [Measures].[VicCount] / [Measures].[Fact Count]
+	 ,Format_String = 'Percent'
+Select	{[Measures].[VicCount],[Measures].[Fact Count],[Measures].
+		[Ty le nan nhan va vu an (%)]} on Columns,
+		{	[Dim Time].[Year].Members
+		} on Rows
+From	[Homicide Reports DW];
+
+-- Câu 6: Cho biết tên cơ quan, loại cơ quan và tổng số vụ án mà cơ quan điều tra 
+--lớn hơn 100 theo từng năm.
+ Select	{[Measures].[Fact Count]} on Columns,
+		{Generate(
+			[Dim Time].[Year].Children, 
+			[Dim Time].[Year].CurrentMember *
+			Filter(
+				{[Dim Agency].[Agency].Children
+				*[Dim Agency].[Agentype].Children},
+				[Measures].[Fact Count] > 100
+				)
+			)
+		} on Rows
+From	[Homicide Reports DW];
+
+-- Câu 7: Với từng quận của từng bang, liệt kê số lượng vụ án xảy ra theo từng năm, 
+--trừ quận Niagara và Nassau bang New York
+Select	{[Dim Time].[Year].Members} on Columns,
+		{Except(
+			{[Dim Location].[CNTYFIPS].Children},
+			{[Dim Location].[CNTYFIPS].&[Niagara]&[New York],
+			[Dim Location].[CNTYFIPS].&[Nassau]&[New York]}
+			)
+		} on Rows
+From	[Homicide Reports DW]
+Where	{[Measures].[Fact Count]};
+
+-- Câu 8: Với mỗi tiêu bang, đưa ra 3 quận có số vụ án xảy ra nhiều nhất.
+Select	{[Measures].[Fact Count]} on Columns,
+		{Generate(
+			[Dim Location].[State].Children,
+			TopCount( 
+				{[Dim Location].[State].CurrentMember * 
+				[Dim Location].[CNTYFIPS].Children}
+				,3
+				,[Measures].[Fact Count]
+			)
+		)} on Rows
+From	[Homicide Reports DW];
+
+-- Câu 9: Thống kê số lượng nạn nhân theo từng nhóm tuổi và giới tính, sắp xếp 
+--giảm dần theo số lượng nạn nhân.
+Select	{[Measures].[VicCount]} on Columns,
+		{	
+			Order(
+				[Dim Victim].[Vic Sex].Children*[Dim Victim].[Vic Age].Children,
+				[Measures].[VicCount],
+				DESC
+			)
+		} on Rows
+From	[Homicide Reports DW];
+
+-- Câu 10: Cho biết top 3 cơ quan giải quyết được nhiều vụ án nhất năm 2017.
+Select	{[Measures].[Fact Count]} on Columns,
+		{TopCount(
+			{[Dim Agency].[Agency].Children},
+			3,
+			[Measures].[Fact Count]
+			)
+		} on Rows
+From	[Homicide Reports DW]
+Where	{[Dim Time].[Year].&[2017]};
+
