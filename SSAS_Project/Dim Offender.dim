@@ -1,0 +1,161 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e8a10d40-b5c5-4051-919d-f7ae08bb8e70" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Offender</ID>
+  <Name>Dim Offender</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="c4001540-130c-4a65-9e71-3f3e66e6ac8f">
+    <DataSourceViewID>Homicide Reports DW</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="a3d1118e-119b-480d-89ce-22360d6b7a16">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="be6bfb56-019d-4afb-8619-990a25ad2deb">
+      <ID>Off ID</ID>
+      <Name>Off ID</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5cc5f6d9-73be-4ab5-a757-52c004fc1a1b">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="00fdbc88-69ce-4f29-8877-01308722a614">
+            <TableID>dbo_Dim_Offender</TableID>
+            <ColumnID>OffID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="a03a2c53-af6a-487d-8d58-8b1d8d230cb9">
+          <AttributeID>Off Ethnic</AttributeID>
+          <Name>Off Ethnic</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9e407de0-1fe9-4522-8e5c-cba2b7075754">
+          <AttributeID>Off Age</AttributeID>
+          <Name>Off Age</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9e326e2c-7c9d-455d-9883-41708ac773eb">
+          <AttributeID>Off Sex</AttributeID>
+          <Name>Off Sex</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7496a771-da23-4ef4-b8d2-c67917d77e8e">
+          <AttributeID>Off Race</AttributeID>
+          <Name>Off Race</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9f9d2d99-27c5-4643-a65e-4b68abbd8980">
+      <ID>Off Ethnic</ID>
+      <Name>Off Ethnic</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9d81150d-3d58-4d64-9516-093fb9c63896">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4d6fefb6-606e-4d61-873d-bc5073344864">
+            <TableID>dbo_Dim_Offender</TableID>
+            <ColumnID>OffEthnic</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9c820ca0-8100-4cde-a4e7-f290f5272e92">
+      <ID>Off Age</ID>
+      <Name>Off Age</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8efe6862-fa76-481c-b085-00fb3c01a2af">
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4345816f-7943-48a7-aee4-3a567b065e35">
+            <TableID>dbo_Dim_Offender</TableID>
+            <ColumnID>OffAge</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e016132f-3e94-48b9-bde5-9696ffa1d8f7">
+      <ID>Off Sex</ID>
+      <Name>Off Sex</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1cace561-919d-4c50-a358-065af349780a">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="49631c72-d0df-4897-bb51-9bdfea9436d8">
+            <TableID>dbo_Dim_Offender</TableID>
+            <ColumnID>OffSex</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6e33d60b-fab7-45a8-b799-1fc8b92d4d35">
+      <ID>Off Race</ID>
+      <Name>Off Race</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5e08534c-7928-4a87-8ffb-5dd1e0ed8a36">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bfbe2bbc-78d0-41af-a1b1-8f7a28c4af04">
+            <TableID>dbo_Dim_Offender</TableID>
+            <ColumnID>OffRace</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

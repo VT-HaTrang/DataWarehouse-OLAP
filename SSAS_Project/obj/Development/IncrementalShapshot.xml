@@ -1,0 +1,110 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>SSAS_Project</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>rfRxb3XtvCLGmLv8jVGlk1jpzBs=5/23/2023 10:57:155/23/2023 10:57:15</TimeStamp>
+        <ID>
+          <String>Homicide Reports DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>tBLDbSCW15SPiVP8J08AWKywdEc=5/23/2023 10:57:335/23/2023 10:57:33</TimeStamp>
+        <ID>
+          <String>Homicide Reports DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ioC9VPQsUQyalmzaDuwhV3mosQo=5/23/2023 11:16:265/23/2023 10:57:54</TimeStamp>
+        <ID>
+          <String>Dim Agency</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>JU8pzKY9FSTUHKjEhhgTtdnqLZQ=5/23/2023 10:58:085/23/2023 10:58:08</TimeStamp>
+        <ID>
+          <String>Dim Circumstance</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>/AfMsoG2BxeKiN1ek32RL5O2f2U=5/23/2023 11:30:075/23/2023 10:58:22</TimeStamp>
+        <ID>
+          <String>Dim Location</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>acMGTxkxE6N+usq8vdPqF2gQ9go=5/23/2023 10:58:355/23/2023 10:58:35</TimeStamp>
+        <ID>
+          <String>Dim Offender</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>bu+QzxtlGV4EUqdVWoqcb5QHAvI=5/23/2023 10:58:495/23/2023 10:58:49</TimeStamp>
+        <ID>
+          <String>Dim Relationship</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>RqlCRHVEkgEy5P71+CByrhXPyZk=5/23/2023 11:07:065/23/2023 10:59:01</TimeStamp>
+        <ID>
+          <String>Dim Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>fJRIN7IMfjbMyjxmi6Guq9S2fHI=5/23/2023 10:59:135/23/2023 10:59:13</TimeStamp>
+        <ID>
+          <String>Dim Victim</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>0b40LPl7h8KB8KbkWgkfJGNO1to=5/23/2023 10:59:275/23/2023 10:59:27</TimeStamp>
+        <ID>
+          <String>Dim Weapon</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>iM3hvfLs5MhnvD0SQHAG1Ohtx/Q=5/27/2023 19:36:095/23/2023 10:59:58Cl1L7FEIFqwhSIUKAa5JhhdLDSo=5/23/2023 10:59:585/23/2023 10:59:58</TimeStamp>
+        <ID>
+          <String>Homicide Reports DW</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>PV3298hc+mk24cs/+OgTMg5Fg/A=5/23/2023 10:56:115/23/2023 10:56:10</TimeStamp>
+      <ID>
+        <String>SSAS_Project</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2023-05-27T12:36:12.286667Z</LastDeployed>
+</DeploymentSnapshot>
